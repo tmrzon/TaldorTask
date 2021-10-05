@@ -1,0 +1,15 @@
+<div class="container-fluid">
+<div class="row">
+    <div class="col-9">
+        <div class="movies"> 
+            <app-movie *ngFor="let movie of dbSer.movies" [movie]="movie"></app-movie>
+        </div>
+    </div>
+    <div class="col-3 center">
+        <div class="border">ברוך הבא {{dbSer.userName}}</div>
+        <div class="border" (click)="openModal()">הוספת סרט</div>
+        <div class="border" *ngFor="let c of dbSer.categories">{{c}}</div>
+        <div class="border" (click)="exit()">יציאה</div>
+    </div>
+</div>
+</div>

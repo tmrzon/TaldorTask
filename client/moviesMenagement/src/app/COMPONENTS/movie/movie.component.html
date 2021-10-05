@@ -1,0 +1,8 @@
+<div class="d-flex square">
+    <div class="leftSide">
+        <button (click)="delete()" class="btn btn-outline-secondary">x</button>
+        <p>{{movie.movieName}}</p>
+        <p>{{movie.category}}</p>
+    </div>
+    <img src="{{movie.poster}}" (click)="openLink(movie.poster)" alt="">
+</div>

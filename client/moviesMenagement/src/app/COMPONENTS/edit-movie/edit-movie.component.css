@@ -1,0 +1,9 @@
+.rtl{
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    flex-direction: column;
+}
+.inputError{
+    border: red 1px solid;
+}

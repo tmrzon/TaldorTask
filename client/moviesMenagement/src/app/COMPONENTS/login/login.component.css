@@ -1,0 +1,15 @@
+.center{
+    margin: 20vh;
+    justify-content: center;
+    flex-direction: column;
+}
+.rtl{
+    display: flex;
+    justify-content: right;
+    text-align: right;
+    flex-direction: column;
+}
+.error{
+    color: red;
+    text-align: center;
+}

@@ -1,0 +1,27 @@
+.square{
+    min-height: 200px;
+    width: 400px;
+    margin: 5px;
+    padding: 2px;
+    border: 2px gray solid;
+    justify-content: space-between;
+    align-items: center;
+}
+img{
+    height: 200px;
+}
+.leftSide{
+    min-height: 200px;
+}
+@media only screen and (max-width: 600px) {
+    .square {
+        min-height: 100px;
+        width: 200px;
+        }
+    img{
+        height: 100px;
+    }
+    .leftSide{
+        min-height: 100px;
+    }
+  }

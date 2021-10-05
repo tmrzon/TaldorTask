@@ -1,0 +1,57 @@
+<div class="modal-header">
+    <h4 class="modal-title">סרט חדש</h4>
+</div>
+<form class="p-3" [formGroup]="movieForm" >
+    <div class="form-group rtl">
+        <label for="name">שם</label>
+        <div class="input-group">
+            <input id="name" class="form-control"
+                [ngClass]="(movieForm.controls.movieName.dirty||isSubmitted)&&movieForm.controls.movieName.invalid?'is-invalid':''"
+                formControlName="movieName">
+            <div class="invalid-feedback">
+                שם הסרט הוא חובה יכול להכיל עד 30 תוים באנגלית בלבד.
+            </div>
+            <div class="invalid-feedback" *ngIf="movieForm.controls.movieName.errors?.exist">
+הסרט קיים כבר.
+            </div>
+        </div>
+    </div>
+    <div class="form-group rtl">
+        <label for="category">קטגוריה</label>
+        <div class="input-group">
+            <select id="category"
+            [ngClass]="(movieForm.controls.imdb.dirty||isSubmitted)&&movieForm.controls.imdb.errors?'is-invalid':''"
+             class="form-control" formControlName="category">
+                <option value="Comedia">קומדיה</option>
+                <option value="Drama">דרמה</option>
+                <option value="Action">אקשן</option>
+                <option value="other">אחר</option>
+            </select>
+            <div class="invalid-feedback">
+שדה חובה
+            </div>
+        </div>
+    </div>
+    <div class="form-group rtl">
+        <label for="imdb">Imdb</label>
+        <div class="input-group">
+            <input id="imdb" class="form-control"
+            [ngClass]="(movieForm.controls.imdb.dirty||isSubmitted)&&movieForm.controls.imdb.invalid?'is-invalid':''"
+            formControlName="imdb" (blur)="validateUrl('imdb')">
+            <div class="invalid-feedback">
+חובה להזין לינק מסוג IMDB בלבד.            </div>
+        </div>
+    </div>
+    <div class="form-group rtl">
+        <label for="poster">פוסטר</label>
+        <div class="input-group">
+            <input id="poster" class="form-control"
+            [ngClass]="(movieForm.controls.poster.dirty||isSubmitted)&&movieForm.controls.poster.invalid?'is-invalid':''"
+            formControlName="poster" (blur)="validateUrl('poster')">
+            <div class="invalid-feedback">
+חובה להזין לינק מסוג IMDB או JPG בלבד.            </div>
+        </div>
+    </div>
+    <input type="submit" class="btn btn-primary mr-2" (click)="addMovie()" value="אישור">
+    <button type="button" class="btn btn-outline-primary" (click)="activeModal.close('Close click')">ביטול</button>
+</form>
